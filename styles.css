@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.header-left h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-center ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header-center a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-center a:hover {
+    color: #f8f8f8;
+    transform: scale(1.1);
+}
+
+.header-right {
+    text-align: right;
+    color: #fff;
+}
+
+.pu_p, .ts_p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-center {
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .header-center ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-right {
+        align-self: flex-end;
+    }
+}
+
+/* About section */
+#about {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#about .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#about .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .about-text {
+    max-width: 600px;
+}
+
+#about .about-text h2 {
+    color: #f3f3f3;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#about .about-text p {
+    color: #f3f3f3;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+#about .about-image {
+    max-width: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+#about .about-image img {
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #about .about-content {
+        flex-direction: column;
+    }
+    #about .about-text,
+    #about .about-image {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Services section */
+#services {
+    padding: 50px 0;
+}
+
+#services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#services h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#services .car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#services .car {
+    width: 31%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: opacity 0.6s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+#services .car h3 {
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+    font-size: 24px;
+}
+
+#services .car img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#services .car-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#services .car-details p {
+    margin: 0 0 0.5rem 0;
+    font-size: 18px;
+}
+
+#services .car-details button {
+    align-self: flex-start;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+#services .car.visible {
+    opacity: 1;
+}
+
+#services .car:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #services .car {
+        width: 48%;
+    }
+}
+
+/* Contact section */
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: #f3f3f3;
+    opacity: 0.9;
+    padding: 0 5px;
+}
+
+/* Button group styles */
+.btn-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-options {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.btn-group.active .contact-options {
+    display: flex;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    animation: fadeIn 1s ease-in-out;
+}
+
+#contact .container {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.car {
+    animation: fadeInUp 0.6s ease-in-out;
+}
